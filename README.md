@@ -15,9 +15,9 @@
 
 ```
 git clone git@github.com:zhunor/threejs-geotiff-visualizer.git
-cd threejs-es6-webpack-starter
+cd threejs-geotiff-visualizer
 
-npm install
+yarn install
 ```
 
 ### Usage
@@ -25,20 +25,15 @@ npm install
 Generate all js/css bundles
 
 ```
-npm run build
+yarn build
 ```
 
 Run `webpack-dev-server` (all bundles will be served from memory)
 
 ```
-npm run dev
+yarn dev
 ```
 
-If you have issues with old dependencies you can try to fix them by running:
-
-```
-npm update:packages
-```
 
 Go to `localhost:8080` to see your project live!
 
