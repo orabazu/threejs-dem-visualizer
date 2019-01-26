@@ -9,8 +9,8 @@ import * as DAT from "../js/vendor/dat.gui.min";
 // import * as mountainImage from "../textures/agri-small-autumn.jpg"; 
 
 
-import * as terrain from "../textures/agri-medium-dem.tif";
-import * as mountainImage from "../textures/agri-medium-autumn.jpg"; 
+import * as terrain from "../textures/agri-small-dem.tif";
+import * as mountainImage from "../textures/agri-small-autumn.jpg"; 
 
 
 import * as GeoTIFF from 'geotiff';
@@ -111,6 +111,7 @@ class Application {
         this.controls.maxDistance = 1500;
         this.controls.minDistance = 0;
         this.controls.autoRotate = true; 
+        
     }
 
     setupLight() {
