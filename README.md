@@ -1,6 +1,6 @@
 # three.js-geotiff-visualizer
 
-![A GIF file showing a preview of the starter project](https://github.com/jackdbd/threejs-es6-webpack-starter/blob/master/preview.gif "Mouth Ağrı, modeled from NASA's digital elevation model and satellite image data")
+![A GIF file showing a preview of the starter project](https://github.com/zhunor/threejs-dem-visualizer/blob/master/preview.gif "Mouth Ağrı, modeled from NASA's digital elevation model and satellite image data")
 
 :warning: If you encounter a `validateschema` error when running `yarn dev`, try downgrading `webpack-cli` to `2.0.0`. It seems a bug that affects only [webpack-dev-server](https://stackoverflow.com/questions/50654952/webpack-dev-server-fails-to-run-with-error-of-validateschema). :warning:
 
