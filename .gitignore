@@ -1,0 +1,19 @@
+# OSX
+.DS_Store
+
+# editor
+.vscode/
+
+node_modules/
+
+# webpack bundles
+/dist/*
+# unignore the favicon
+!/dist/favicon.ico
+
+# logs
+*.log
+
+# linters
+.eslintrc.json
+.sass-lint.yml
