@@ -1,4 +1,4 @@
-# three.js-geotiff-visualizer
+# threejs-dem-visualizer
 
 ![A GIF file showing a preview of the starter project](https://github.com/zhunor/threejs-dem-visualizer/blob/master/preview.gif "Mouth Ağrı, modeled from NASA's digital elevation model and satellite image data")
 
