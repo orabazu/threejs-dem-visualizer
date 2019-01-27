@@ -14,7 +14,7 @@ module.exports = {
   },
 
   output: {
-    path: path.join(__dirname, "dist"),
+    path: path.join(__dirname, "build"),
     filename: "[chunkhash].js",
     chunkFilename: "[id].bundle.js"
   },
@@ -108,7 +108,7 @@ module.exports = {
 
   plugins: [
     // new BundleAnalyzerPlugin(),
-    new CleanWebpackPlugin(["dist"], {
+    new CleanWebpackPlugin(["build"], {
       root: __dirname,
       exclude: ["favicon.ico"],
       verbose: true
@@ -135,7 +135,7 @@ module.exports = {
   devServer: {
     host: "localhost",
     port: 8080,
-    contentBase: path.join(__dirname, "dist"),
+    contentBase: path.join(__dirname, "build"),
     inline: true, // live reloading
     stats: {
       colors: true,

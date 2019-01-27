@@ -40,7 +40,7 @@ Go to `localhost:8080` to see your project live!
 
 ### Credits
 
-Skeleton of the code is built on https://github.com/jackdbd/threejs-es6-webpack-starter project. I have add some css since reading geotiff files take time. If you have problems on build better to follow original instructions.
+Skeleton of the code is built on https://github.com/jackdbd/threejs-es6-webpack-starter project. I add some css for loading since reading geotiff files take time. If you have problems on build better to follow original instructions.
 
 Demo of [jonathanlurie](https://github.com/jonathanlurie/ThreejsDEM) and [mapmasters] (http://blog.mastermaps.com/2013/10/terrain-building-with-threejs.html) were realy helpfull to understand the logic of DEM to three.js convertion
 

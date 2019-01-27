@@ -18,7 +18,7 @@
         "test": "jest --verbose",
         "static": "chromium-browser build/index.html"
     },
-    "repository": "git@github.com:jackdbd/threejs-es6-webpack-starter.git",
+    "repository": "https://github.com/zhunor/threejs-dem-visualizer",
     "author": "zhunor <ozerorhun@gmail.com>",
     "license": "MIT",
     "dependencies": {
