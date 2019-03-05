@@ -12,7 +12,8 @@ dist/
 build/
 
 # unignore the favicon
-!/dist/favicon.ico
+!/build/favicon.ico
+
 
 # logs
 *.log
