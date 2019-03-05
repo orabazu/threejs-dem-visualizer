@@ -55,15 +55,6 @@ module.exports = {
           }
         ]
       },
-      // rule for .glsl files (shaders)
-      {
-        test: /\.glsl$/,
-        use: [
-          {
-            loader: "webpack-glsl-loader"
-          }
-        ]
-      },
       // rule for textures (images)
       {
         test: /\.(jpe?g|png|tif)$/i,

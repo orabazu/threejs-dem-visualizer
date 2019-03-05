@@ -2,8 +2,6 @@ import * as THREE from "three";
 // TODO: OrbitControls import three.js on its own, so the webpack bundle includes three.js twice!
 import OrbitControls from "orbit-controls-es6";
 import * as Detector from "../js/vendor/Detector";
-import * as DAT from "../js/vendor/dat.gui.min";
-
 
 // import * as terrain from "../textures/agri-small-dem.tif";
 // import * as mountainImage from "../textures/agri-small-autumn.jpg"; 
@@ -14,11 +12,6 @@ import * as mountainImage from "../textures/agri-small-autumn.jpg";
 
 
 import * as GeoTIFF from 'geotiff';
-
-// const checkerboard = require("../textures/checkerboard.jpg");
-// const star = require("../textures/star.png");
-// const vertexShader = require("../glsl/vertexShader.glsl");
-// const fragmentShader = require("../glsl/fragmentShader.glsl");
 
 require("../sass/home.sass");
 

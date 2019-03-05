@@ -6,14 +6,24 @@
 
 node_modules/
 
+
 # webpack bundles
-/dist/*
+dist/
+build/
+
 # unignore the favicon
 !/dist/favicon.ico
 
 # logs
 *.log
+**.lock
+package-lock.json
 
 # linters
 .eslintrc.json
 .sass-lint.yml
+
+# aux files 
+src/textures/**.xml
+
+
