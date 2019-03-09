@@ -3,8 +3,9 @@ import * as THREE from "three";
 import OrbitControls from "orbit-controls-es6";
 import * as Detector from "../js/vendor/Detector";
 
-// import * as terrain from "../textures/agri-small-dem.tif";
-// import * as mountainImage from "../textures/agri-small-autumn.jpg";
+// TODO: Major performance problems on reading big images
+// import * as terrain from "../textures/agri-medium-dem.tif";
+// import * as mountainImage from "../textures/agri-medium-autumn.jpg";
 
 import * as terrain from "../textures/agri-small-dem.tif";
 import * as mountainImage from "../textures/agri-small-autumn.jpg";
@@ -15,7 +16,7 @@ require("../sass/home.sass");
 class Application {
   constructor(opts = {}) {
     this.width = window.innerWidth;
-    this.height = window.innerHeight;
+    this.height = window.innerHeight
 
     if (opts.container) {
       this.container = opts.container;
@@ -28,7 +29,6 @@ class Application {
     if (Detector.webgl) {
       this.init();
       this.render();
-      console.log("web gl is available my boi");
     } else {
       // TODO: style warning message
       console.log("WebGL NOT supported in your browser!");
@@ -47,8 +47,8 @@ class Application {
     this.setupHelpers();
 
     window.addEventListener("resize", () => {
-      var w = window.innerWidth;
-      var h = window.innerHeight;
+      const w = window.innerWidth;
+      const h = window.innerHeight;
       this.renderer.setSize(w, h);
       this.camera.aspect = w / h;
       this.camera.updateProjectionMatrix();
@@ -108,51 +108,56 @@ class Application {
   }
 
   setupTerrainModel() {
-    let readGeoTif = async () => {
-      let rawTiff = await GeoTIFF.fromUrl(terrain);
-      let tifImage = await rawTiff.getImage();
-      let image = {
+    const readGeoTif = async () => {
+      const rawTiff = await GeoTIFF.fromUrl(terrain);
+      const tifImage = await rawTiff.getImage();
+      const image = {
         width: tifImage.getWidth(),
         height: tifImage.getHeight()
       };
+      
 
+      /* 
+      The third and fourth parameter are image segments and we are subtracting one from each,
+       otherwise our 3D model goes crazy.
+       https://github.com/mrdoob/three.js/blob/master/src/geometries/PlaneGeometry.js#L57
+       */
       const geometry = new THREE.PlaneGeometry(
-        1000,
-        1000,
+        image.width,
+        image.height,
         image.width - 1,
-        image.height - 1
+        image.height -1
       );
       const data = await tifImage.readRasters({ interleave: true });
 
       console.time("parseGeom");
       geometry.vertices.forEach((geom, index) => {
-        geom.z = (data[index] / 10) * -1;
+        geom.z = (data[index] / 20) * -1;
       });
       console.timeEnd("parseGeom");
 
       const texture = new THREE.TextureLoader().load(mountainImage);
-
-      var material = new THREE.MeshLambertMaterial({
+      const material = new THREE.MeshLambertMaterial({
         wireframe: false,
         side: THREE.DoubleSide,
         map: texture
       });
 
       const mountain = new THREE.Mesh(geometry, material);
-      mountain.position.y = -100;
+      mountain.position.y = 0;
       mountain.rotation.x = Math.PI / 2;
 
       this.scene.add(mountain);
 
-      let loader = document.getElementById("loader");
+      const loader = document.getElementById("loader");
       loader.style.opacity = "-1";
 
-      // After properly animate hide to make canvas clickable again
+      // After a proper animation on opacity, hide element to make canvas clickable again
       setTimeout(
-        (hideLoader = () => {
+        (() => {
           loader.style.display = "none";
         }),
-        1700
+        1500
       );
     };
 
@@ -170,6 +175,7 @@ class Application {
     const axesHelper = new THREE.AxesHelper(500);
     this.scene.add(axesHelper);
   }
+}
 
 // wrap everything inside a function scope and invoke it (IIFE, a.k.a. SEAF)
 (() => {
