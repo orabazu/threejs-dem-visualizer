@@ -4,6 +4,9 @@
 
 :warning: If you encounter a `validateschema` error when running `yarn dev`, try downgrading `webpack-cli` to `2.0.0`. It seems a bug that affects only [webpack-dev-server](https://stackoverflow.com/questions/50654952/webpack-dev-server-fails-to-run-with-error-of-validateschema). :warning:
 
+### Blog Post: 
+https://medium.com/@zubazor/visualizing-a-mountain-using-three-js-landsat-and-srtm-26275c920e34
+
 ### Features :
 
 * DEM(Digital Elevation Model) and satellite image data is downloaded from [USGS](https://earthexplorer.usgs.gov/) 
