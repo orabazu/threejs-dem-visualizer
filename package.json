@@ -17,8 +17,8 @@
         "predeploy": "yarn build",
         "test": "jest --verbose",
         "static": "chromium-browser build/index.html",
-        "lint": "eslint ./src --cache --ext .js ",
-        "lint:fix": "eslint ./src --cache --ext .js --fix"
+        "lint": "eslint ./src --ext .js ",
+        "lint:fix": "eslint ./src --ext .js --fix"
     },
     "repository": "https://github.com/zhunor/threejs-dem-visualizer",
     "author": "zhunor <ozerorhun@gmail.com>",

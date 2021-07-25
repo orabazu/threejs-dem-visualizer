@@ -9,7 +9,7 @@ import {
   TextureLoader,
   MeshLambertMaterial,
   DoubleSide,
-  Mesh
+  Mesh,
 } from 'three';
 // TODO: OrbitControls import three.js on its own, so the webpack bundle includes three.js twice!
 import OrbitControls from 'orbit-controls-es6';

@@ -4,12 +4,22 @@
   "parserOptions": {
     "ecmaVersion": 2020
   },
-  "plugins": [],
   "extends": [
     "eslint:recommended",
-    "eslint-config-prettier"
+    "plugin:prettier/recommended"
   ],
-  "rules":{
-    "eslint-plugin-prettier": ["error"]
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": "error"
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "globals": {
+    "GeoTIFF": "readonly"
   }
 }
