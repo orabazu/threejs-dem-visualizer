@@ -1,0 +1,15 @@
+{
+  "root": true,
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 2020
+  },
+  "plugins": [],
+  "extends": [
+    "eslint:recommended",
+    "eslint-config-prettier"
+  ],
+  "rules":{
+    "eslint-plugin-prettier": ["error"]
+  }
+}

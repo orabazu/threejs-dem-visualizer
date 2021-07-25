@@ -1,0 +1,6 @@
+node_modules
+dist
+*.d.ts
+*.config.js
+.json
+src/js/vendor

@@ -18,7 +18,6 @@ build/
 # logs
 *.log
 **.lock
-package-lock.json
 
 # linters
 .eslintrc.json
