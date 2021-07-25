@@ -25,5 +25,6 @@ build/
 
 # aux files 
 src/textures/**.xml
+stats.json
 
 

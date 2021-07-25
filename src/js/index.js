@@ -10,7 +10,7 @@ import {
   MeshLambertMaterial,
   DoubleSide,
   Mesh,
-} from 'three';
+} from 'three/build/three.min.js'; // import min because three.js is not tree-shakable for now
 // TODO: OrbitControls import three.js on its own, so the webpack bundle includes three.js twice!
 import OrbitControls from 'orbit-controls-es6';
 import * as Detector from '../js/vendor/Detector';

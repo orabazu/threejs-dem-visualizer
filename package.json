@@ -4,7 +4,7 @@
     "description": "A starter project for Three.js with support for ES6 and Webpack 4",
     "private": true,
     "scripts": {
-        "build": "webpack --config webpack.config.js --progress --env production",
+        "build": "webpack --config webpack.config.js --progress --env production --mode production",
         "start": "webpack serve --mode development --env development --open",
         "ci": "yarn run test && yarn run coverage",
         "coverage": "codecov",
@@ -14,7 +14,8 @@
         "predeploy": "yarn build",
         "test": "jest --verbose",
         "lint": "eslint ./src --ext .js ",
-        "lint:fix": "eslint ./src --ext .js --fix"
+        "lint:fix": "eslint ./src --ext .js --fix",
+        "analyze-bundle": "npx webpack --json > stats.json && yarn webpack-bundle-analyzer stats.json"
     },
     "repository": "https://github.com/zhunor/threejs-dem-visualizer",
     "author": "zhunor <ozerorhun@gmail.com>",

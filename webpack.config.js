@@ -123,7 +123,7 @@ module.exports = (env) => {
       //   minRatio: 0.8,
       // }),
     ],
-    devtool: isProduction ? false : 'eval-cheap-module-source-map',
+    devtool: isProduction ? false : 'eval-cheap-module-source-map', // TODO add multiple webpack conf
     devServer: {
       host: "localhost",
       port: 8080,
