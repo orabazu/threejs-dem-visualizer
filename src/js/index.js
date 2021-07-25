@@ -21,7 +21,6 @@ import * as Detector from '../js/vendor/Detector';
 
 import terrain from '../textures/agri-small-dem.tif';
 import mountainImage from '../textures/agri-small-autumn.jpg';
-// import { fromUrl } from "geotiff";
 
 require('../sass/home.sass');
 
@@ -179,7 +178,6 @@ class Application {
   }
 }
 
-// wrap everything inside a function scope and invoke it (IIFE, a.k.a. SEAF)
 (() => {
   const app = new Application({
     container: document.getElementById('canvas-container'),
