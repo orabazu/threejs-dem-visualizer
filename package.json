@@ -4,19 +4,15 @@
     "description": "A starter project for Three.js with support for ES6 and Webpack 4",
     "private": true,
     "scripts": {
-        "build": "webpack --config webpack.config.js --progress --mode production",
-        "start": "webpack serve --mode development --env development",
+        "build": "webpack --config webpack.config.js --progress --env production",
+        "start": "webpack serve --mode development --env development --open",
         "ci": "yarn run test && yarn run coverage",
         "coverage": "codecov",
         "deploy": "gh-pages -d build",
-        "dev": "webpack-dev-server --config webpack.config.js --mode development --open",
         "format": "prettier --write '{,!(node_modules)/}**/*.{js,jsx}'",
-        "ncu": "ncu",
-        "ncuu": "ncu --upgrade",
         "nuke": "rimraf node_modules && rm yarn.lock",
         "predeploy": "yarn build",
         "test": "jest --verbose",
-        "static": "chromium-browser build/index.html",
         "lint": "eslint ./src --ext .js ",
         "lint:fix": "eslint ./src --ext .js --fix"
     },
@@ -24,7 +20,6 @@
     "author": "zhunor <ozerorhun@gmail.com>",
     "license": "MIT",
     "dependencies": {
-        "geotiff": "^1.0.0-beta.16",
         "orbit-controls-es6": "2.0.0",
         "three": "0.99.0"
     },
