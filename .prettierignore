@@ -1,5 +1,8 @@
 package.json
 package-lock.json
-node_modules/
-dist/
-build/
+node_modules
+dist
+build
+
+# Ignore all HTML files:
+*.json

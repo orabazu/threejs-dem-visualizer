@@ -18,7 +18,6 @@ build/
 # logs
 *.log
 **.lock
-package-lock.json
 
 # linters
 .eslintrc.json
@@ -26,5 +25,6 @@ package-lock.json
 
 # aux files 
 src/textures/**.xml
+stats.json
 
 
