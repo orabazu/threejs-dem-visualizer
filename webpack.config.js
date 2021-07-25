@@ -18,7 +18,6 @@ module.exports = (env) => {
       filename: "[chunkhash].js",
       chunkFilename: "[id].bundle.js"
     },
-    devtool: "cheap-source-map",
     module: {
       rules: [
         {
@@ -40,13 +39,13 @@ module.exports = (env) => {
                 // importLoaders allows to configure how many loaders before css-loader should be applied to @imported resources.
                 // 0 => no loaders (default); 1 => postcss-loader; 2 => postcss-loader, sass-loader
                 importLoaders: 2,
-                sourceMap: true,
+                sourceMap: !isProduction,
               }
             },
             {
               loader: "sass-loader",
               options: {
-                sourceMap: true
+                sourceMap: !isProduction,
               }
             }
           ]
@@ -80,7 +79,6 @@ module.exports = (env) => {
         }
       ]
     },
-
     optimization: {
       splitChunks: {
         cacheGroups: {
@@ -102,14 +100,14 @@ module.exports = (env) => {
 
     plugins: [
       // new BundleAnalyzerPlugin(),
-      // new CleanWebpackPlugin({
-      //   root: __dirname,
-      //   exclude: ["favicon.ico"],
-      //   verbose: true
-      // }),
+      new CleanWebpackPlugin({
+        root: __dirname,
+        exclude: ["favicon.ico"],
+        verbose: true
+      }),
       new MiniCssExtractPlugin({
-        filename: "[name].css",
-        chunkFilename: "[id].bundle.css"
+        filename: !isProduction ? '[name].css' : '[name].[hash].css',
+        chunkFilename: !isProduction ? '[id].css' : '[id].[hash].css',
       }),
       new HtmlWebpackPlugin({
         template: path.join(__dirname, "src", "templates", "index.html"),
@@ -125,7 +123,7 @@ module.exports = (env) => {
       //   minRatio: 0.8,
       // }),
     ],
-
+    devtool: isProduction ? false : 'eval-cheap-module-source-map',
     devServer: {
       host: "localhost",
       port: 8080,

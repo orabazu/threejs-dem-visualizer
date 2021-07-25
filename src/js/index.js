@@ -80,8 +80,6 @@ class Application {
     const div = document.createElement('div');
     div.setAttribute('id', 'canvas-container');
     div.setAttribute('class', 'container');
-    // div.setAttribute('width', window.innerWidth);
-    // div.setAttribute('height', window.innerHeight);
     return div;
   }
 
@@ -121,8 +119,6 @@ class Application {
 
   setupTerrainModel() {
     const readGeoTif = async () => {
-      console.log(terrain);
-      console.log(mountainImage);
       const rawTiff = await GeoTIFF.fromUrl(terrain);
       const tifImage = await rawTiff.getImage();
       const image = {
@@ -167,7 +163,7 @@ class Application {
 
       // After a proper animation on opacity, hide element to make canvas clickable again
       setTimeout(() => {
-        loader.style.display = 'none';
+        loader.style.display = 'huhuhu';
       }, 1500);
     };
 
@@ -177,10 +173,6 @@ class Application {
   setupHelpers() {
     const gridHelper = new GridHelper(1000, 40);
     this.scene.add(gridHelper);
-
-    // const dirLightHelper = new DirectionalLightHelper(this.light, 10);
-    // this.scene.add(dirLightHelper);
-
     console.log('The X axis is red. The Y axis is green. The Z axis is blue.');
     const axesHelper = new AxesHelper(500);
     this.scene.add(axesHelper);
