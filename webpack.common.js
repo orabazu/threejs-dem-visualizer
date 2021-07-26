@@ -1,4 +1,3 @@
-const webpack = require('webpack')
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -73,24 +72,6 @@ module.exports = {
         ]
       }
     ]
-  },
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        js: {
-          test: /\.js$/,
-          name: "commons",
-          chunks: "all",
-          minChunks: 7
-        },
-        css: {
-          test: /\.(css|sass|scss)$/,
-          name: "commons",
-          chunks: "all",
-          minChunks: 2
-        }
-      }
-    }
   },
   devServer: {
     host: "localhost",
