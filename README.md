@@ -3,7 +3,7 @@
 ![A GIF file showing a preview of the starter project](https://github.com/zhunor/threejs-dem-visualizer/blob/master/preview.gif "Mouth Ağrı, modeled from USGS's digital elevation model and satellite image data")
 
 
-### Blog Post: 
+## Detailed explanation on Medium: 
 https://medium.com/@zubazor/visualizing-a-mountain-using-three-js-landsat-and-srtm-26275c920e34
 
 ### Features :
@@ -16,8 +16,8 @@ https://medium.com/@zubazor/visualizing-a-mountain-using-three-js-landsat-and-sr
 ### Installation
 
 ```
-git clone git@github.com:zhunor/threejs-geotiff-visualizer.git
-cd threejs-geotiff-visualizer
+git clone git@github.com:zhunor/threejs-dem-visualizer.git
+cd threejs-dem-visualizer
 
 yarn install
 ```
@@ -30,7 +30,7 @@ Generate all js/css bundles
 yarn build
 ```
 
-Run `webpack-dev-server` (all bundles will be served from memory)
+Developement
 
 ```
 yarn start
