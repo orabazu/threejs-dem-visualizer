@@ -4,8 +4,8 @@
     "description": "A starter project for Three.js with support for ES6 and Webpack 4",
     "private": true,
     "scripts": {
-        "build": "webpack --config webpack.config.js --progress --env production --mode production",
-        "start": "webpack serve --mode development --env development --open",
+        "build": "webpack --config webpack.prod.js --progress --env production",
+        "start": "webpack serve --config webpack.dev.js --env development --open",
         "ci": "yarn run test && yarn run coverage",
         "coverage": "codecov",
         "deploy": "gh-pages -d build",
@@ -22,7 +22,7 @@
     "license": "MIT",
     "dependencies": {
         "orbit-controls-es6": "2.0.0",
-        "three": "0.99.0"
+        "three": "0.130.1"
     },
     "devDependencies": {
         "@babel/core": "^7.14.8",
@@ -56,7 +56,8 @@
         "webpack-bundle-analyzer": "^4.4.2",
         "webpack-cli": "^4.7.2",
         "webpack-dev-server": "^3.11.2",
-        "webpack-glsl-loader": "1.0.1"
+        "webpack-glsl-loader": "1.0.1",
+        "webpack-merge": "^5.8.0"
     },
     "keywords": [
         "threejs",
