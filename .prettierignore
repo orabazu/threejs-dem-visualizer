@@ -6,3 +6,4 @@ build
 
 # Ignore all HTML files:
 *.json
+webpack.*
