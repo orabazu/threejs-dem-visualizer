@@ -10,14 +10,13 @@ import {
   MeshLambertMaterial,
   DoubleSide,
   Mesh,
-} from 'three/build/three.min.js'; // import min because three.js is not tree-shakable for now
+} from 'three/build/three.min'; // import min because three.js is not tree-shakable for now
 // TODO: OrbitControls import three.js on its own, so the webpack bundle includes three.js twice!
 import OrbitControls from 'orbit-controls-es6';
 import * as Detector from '../js/vendor/Detector';
-
 // TODO: Major performance problems on reading big images
-// import * as terrain from "../textures/agri-medium-dem.tif";
-// import * as mountainImage from "../textures/agri-medium-autumn.jpg";
+// import terrain from '../textures/agri-medium-dem.tif';
+// import mountainImage from '../textures/agri-medium-autumn.jpg';
 
 import terrain from '../textures/agri-small-dem.tif';
 import mountainImage from '../textures/agri-small-autumn.jpg';
@@ -137,10 +136,11 @@ class Application {
         image.height - 1
       );
       const data = await tifImage.readRasters({ interleave: true });
-
       console.time('parseGeom');
-      geometry.vertices.forEach((geom, index) => {
-        geom.z = (data[index] / 20) * -1;
+      const arr1 = new Array(geometry.attributes.position.count);
+      const arr = arr1.fill(1);
+      arr.forEach((a, index) => {
+        geometry.attributes.position.setZ(index, (data[index] / 10) * -1);
       });
       console.timeEnd('parseGeom');
 
@@ -162,7 +162,7 @@ class Application {
 
       // After a proper animation on opacity, hide element to make canvas clickable again
       setTimeout(() => {
-        loader.style.display = 'huhuhu';
+        loader.style.display = 'none';
       }, 1500);
     };
 
