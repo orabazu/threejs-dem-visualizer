@@ -2,13 +2,12 @@
     "name": "threejs-es6-webpack-starter-landsat",
     "version": "0.0.1",
     "description": "A starter project for Three.js with support for ES6 and Webpack 4",
-    "private": true,
     "scripts": {
         "build": "webpack --config webpack.prod.js --progress --env production",
         "start": "webpack serve --config webpack.dev.js --env development --open",
         "ci": "yarn run test && yarn run coverage",
         "coverage": "codecov",
-        "deploy": "gh-pages -d build",
+        "deploy": "npx gh-pages -d build",
         "format": "prettier --write '{,!(node_modules)/}**/*.{js,jsx}'",
         "nuke": "rimraf node_modules && rm yarn.lock",
         "predeploy": "yarn build",
@@ -69,7 +68,7 @@
         "sass"
     ],
     "bugs": {
-        "url": "https://github.com/zhunor/threejs-es6-webpack-starter/issues"
+        "url": "https://github.com/zhunor/threejs-dem-visualizer/issues"
     },
-    "homepage": "https://github.com/zhunor/threejs-es6-webpack-starter"
+    "homepage": "https://github.com/zhunor/threejs-dem-visualizer"
 }
