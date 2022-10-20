@@ -14,7 +14,7 @@
         "lint:fix": "eslint ./src --ext .js --fix",
         "analyze-bundle": "npx webpack --json > stats.json && yarn webpack-bundle-analyzer stats.json"
     },
-    "repository": "https://github.com/zhunor/threejs-dem-visualizer",
+    "repository": "https://github.com/orabazu/threejs-dem-visualizer",
     "author": "orabazu <ozerorhun@gmail.com>",
     "license": "MIT",
     "dependencies": {
