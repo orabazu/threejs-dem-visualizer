@@ -17,11 +17,9 @@ build/
 
 # logs
 *.log
-**.lock
 
 # linters
 .eslintrc.json
-.sass-lint.yml
 
 # aux files 
 src/textures/**.xml

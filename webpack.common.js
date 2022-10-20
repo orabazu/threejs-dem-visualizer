@@ -22,7 +22,7 @@ module.exports = {
         include: [path.resolve(__dirname, "js", "src")],
         exclude: [path.resolve(__dirname, "node_modules")],
         use: {
-          loader: "eslint-loader"
+          loader: "esbuild-loader",
         }
       },
       {
@@ -75,13 +75,14 @@ module.exports = {
   devServer: {
     host: "localhost",
     port: 8080,
-    contentBase: path.join(__dirname, "build"),
-    inline: true, // live reloading
-    stats: {
-      colors: true,
-      reasons: true,
-      chunks: false,
-      modules: false
+    open: true,
+    hot: true,
+    historyApiFallback: true,
+    client: {
+      overlay: {
+        errors: true,
+        warnings: false
+      }
     }
   },
 
