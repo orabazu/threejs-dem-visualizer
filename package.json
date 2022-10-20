@@ -1,6 +1,6 @@
 {
     "name": "threejs-es6-webpack-starter-landsat",
-    "version": "0.0.2",
+    "version": "0.1.1",
     "description": "A starter project for Three.js with support for ES6 and Webpack 5",
     "scripts": {
         "build": "webpack --config webpack.prod.js --progress --env production",
