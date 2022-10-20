@@ -18,8 +18,7 @@
     "author": "orabazu <ozerorhun@gmail.com>",
     "license": "MIT",
     "dependencies": {
-        "orbit-controls-es6": "2.0.0",
-        "three": "0.130.1"
+        "three": "^0.145.0"
     },
     "devDependencies": {
         "@babel/core": "^7.19.6",
