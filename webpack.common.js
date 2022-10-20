@@ -22,7 +22,7 @@ module.exports = {
         include: [path.resolve(__dirname, "js", "src")],
         exclude: [path.resolve(__dirname, "node_modules")],
         use: {
-          loader: "eslint-loader"
+          loader: "esbuild-loader",
         }
       },
       {
