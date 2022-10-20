@@ -1,5 +1,5 @@
 const { merge } = require('webpack-merge');
-
+const ESLintPlugin = require('eslint-webpack-plugin');
 const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
@@ -8,4 +8,7 @@ module.exports = merge(common, {
   performance: {
     hints: "warning"
   },
+  plugins: [new ESLintPlugin()],
 });
+
+
