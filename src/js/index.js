@@ -10,9 +10,8 @@ import {
   MeshLambertMaterial,
   DoubleSide,
   Mesh,
-} from 'three/build/three.min'; // import min because three.js is not tree-shakable for now
-// TODO: OrbitControls import three.js on its own, so the webpack bundle includes three.js twice!
-import OrbitControls from 'orbit-controls-es6';
+} from 'three'; // import min because three.js is not tree-shakable for now
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import * as Detector from '../js/vendor/Detector';
 // TODO: Major performance problems on reading big images
 // import terrain from '../textures/agri-medium-dem.tif';
